@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musik i Gryt</title>
+<link rel="stylesheet" type="text/css" href="styles/inline.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+<meta name="apple-mobile-web-app-title" content="Konst i Gryt">
+<meta name="application-name" content="Konst i Gryt">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+
+  <!-- TODO add manifest here -->
+  
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Konst i Gryt</h1>
+    <button id="butUser" class="headerButton" aria-label="Användare"></button>
+    <button id="butRefresh" class="headerButton" aria-label="Uppdatera"></button>
+  </header>
+
+  <main class="main">
+    <div class="card cardTemplate ticket" hidden>
+      <table class="ticket-display">
+        <tr class="ticket-row">
+          <td class="buy-date-time">
+            <span class="buy-date"></span><br>
+            <span class="buy-time"></span>
+          </td>
+          <td class="ticket-info">
+            <strong>Biljett&nbsp;<span class="ticket-code"></span></strong><br>
+            <span class="event-name"></span><br>
+            <span class="event-place"></span><br>
+            <span class="event-date"></span>&nbsp;<span class="event-time"></span>
+          </td>
+          <td class="seller-info">
+              <strong>Musik i Gryt</strong><br>Gryts Gamla Prästgård 1<br>646 96 Stjärnhov<br>
+              <span class="small-print">Org.nr 819001-5456<br>Ej momsregistrerade</span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="holder-info">
+            <span class="adults"></span><br>
+            <span class="children"></span>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="holder-info">
+            <strong>Betalt: <span class="amount"></span> kr</strong>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="event-info"></span>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <div class="dialog-container">
+    <div class="dialog">
+      <div class="dialog-title">Add new city</div>
+      <div class="dialog-body">
+        <select id="selectCityToAdd">
+          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+               https://developer.yahoo.com/weather/documentation.html#req -->
+          <option value="2357536">Austin, TX</option>
+          <option value="2367105">Boston, MA</option>
+          <option value="2379574">Chicago, IL</option>
+          <option value="2459115">New York, NY</option>
+          <option value="2475687">Portland, OR</option>
+          <option value="2487956">San Francisco, CA</option>
+          <option value="2490383">Seattle, WA</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCity" class="button">Add</button>
+        <button id="butAddCancel" class="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <!-- script src="scripts/fetcher.js" async></script -->
+
+</body>
+</html>
